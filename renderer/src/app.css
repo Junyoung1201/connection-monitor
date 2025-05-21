@@ -1,0 +1,13 @@
+:root {
+    --main-blue: #2196F3;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    font-size: 17px;
+    font-family: freesentation-regular;
+    box-sizing: border-box;
+}

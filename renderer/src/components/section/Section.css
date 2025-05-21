@@ -1,0 +1,9 @@
+#app>section {
+    --section-pad: 25px;
+    
+    padding-top: 10px;
+
+    input {
+        
+    }
+}

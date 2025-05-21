@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Freesentation-thin';
+    src: url("./Freesentation-Thin.ttf");
+}
+
+@font-face {
+    font-family: 'Freesentation-light';
+    src: url("./Freesentation-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Freesentation-regular';
+    src: url("./Freesentation-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Freesentation-bold';
+    src: url("./Freesentation-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'Freesentation-Black';
+    src: url("./Freesentation-Black.ttf");
+}

@@ -1,0 +1,10 @@
+#app>header {
+    display: flex;
+    flex-direction: row;
+    background: var(--main-blue);
+    padding: 15px;
+
+    * {
+        color: white;
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "name": "connection-monitor-app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "cls && npx tsc && electron ./public/main.js",
+        "dev": "nodemon -e ts --watch ./src --exec npm start",
+        "build": "electron-builder"
+    },
+    "author": "이준영",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@types/electron": "^1.4.38",
+        "@types/node": "^22.15.20",
+        "electron": "^36.2.1",
+        "electron-builder": "^26.0.12",
+        "nodemon": "^3.1.10"
+    },
+    "build": {
+        "appId": "me.junyoung.connection.monitor.app",
+        "productName": "Connection Monitor",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "**/*",
+            "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+            "!**/node_modules/.bin",
+            "!**/*.map"
+        ],
+        "win": {
+            "target": "nsis"
+        },
+        "mac": {
+            "target": "dmg"
+        },
+        "linux": {
+            "target": "AppImage"
+        }
+    }
+}

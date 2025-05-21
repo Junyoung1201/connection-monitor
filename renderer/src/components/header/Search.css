@@ -1,0 +1,26 @@
+header .search {
+    position: relative;
+    flex: 1;
+
+    img {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 2;
+        height: 20px;
+        filter: invert(50%);
+    }
+
+    input {
+        width: 100%;
+        outline: none;
+        border: 0;
+        border-radius: 7px;
+        padding: 10px;
+        padding-left: 43px;
+        font-size: 17px;
+        color: #252525 !important;
+    }
+}
