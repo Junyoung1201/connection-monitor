@@ -38,7 +38,7 @@ export default function ConnectionList() {
                     !isIgnoredAddress(con.to)
                 ))
                 .map((con,i) => <ConnectionItem 
-                    key={con.pid+"_"+i} 
+                    key={`connection-item_${i}`} 
                     proto={con.proto}
                     state={con.state}
                     from={con.from}

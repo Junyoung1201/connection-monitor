@@ -1,7 +1,9 @@
-header .search {
+.search {
     position: relative;
-    flex: 1;
-
+    width: 100%;
+    background: red;
+    border-bottom: 1px solid black;
+    
     img {
         position: absolute;
         left: 14px;
@@ -17,7 +19,6 @@ header .search {
         width: 100%;
         outline: none;
         border: 0;
-        border-radius: 7px;
         padding: 10px;
         padding-left: 43px;
         font-size: 17px;

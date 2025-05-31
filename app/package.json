@@ -1,7 +1,7 @@
 {
     "name": "connection-monitor-app",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "main.js",
     "scripts": {
         "start": "cls && npx tsc && electron ./public/main.js",
         "dev": "nodemon -e ts --watch ./src --exec npm start",
@@ -20,23 +20,25 @@
     "build": {
         "appId": "me.junyoung.connection.monitor.app",
         "productName": "Connection Monitor",
+        "icon": "assets/icon.png",
         "directories": {
+            "buildResources": "assets",
             "output": "dist"
         },
+        
         "files": [
-            "**/*",
+            { "from": "assets", "to": "." },
+            "package.json",
             "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
             "!**/node_modules/.bin",
             "!**/*.map"
         ],
+        "nsis": {
+            "oneClick": true
+        },
         "win": {
-            "target": "nsis"
-        },
-        "mac": {
-            "target": "dmg"
-        },
-        "linux": {
-            "target": "AppImage"
+            "target": "nsis",
+            "icon": "assets/icon.png"
         }
     }
 }

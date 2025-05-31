@@ -13,7 +13,7 @@ export default function Search() {
     }
 
     return <div className="search">
-        <img src="/img/search.png" alt="검색 아이콘" />
+        <img src="img/search.png" alt="검색 아이콘" />
         <input type="text" placeholder="검색어" autoComplete='off' spellCheck={false} onChange={onChange} value={search ?? ""} />
     </div>
 }
