@@ -12,7 +12,7 @@ export function createWindow() {
         title: "Connection Monitor",
         width: 850,
         height: 780,
-        icon: path.resolve(app.getAppPath(), "icon.ico"),
+        icon: path.resolve(app.getAppPath(), "icon.png"),
         webPreferences: {
             nodeIntegration: true,
             preload: path.resolve(app.getAppPath(), "preload.js")
