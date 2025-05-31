@@ -4,6 +4,7 @@ export interface I_ConnectionInfo {
     from: string
     to: string
     pid: string
+    key?: string
 }
 
 export enum ConnectionStateType {

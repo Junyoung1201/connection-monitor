@@ -10,6 +10,8 @@ export const Windows: {
 export function createWindow() {
     let win = new BrowserWindow({
         title: "Connection Monitor",
+        width: 850,
+        height: 780,
         webPreferences: {
             nodeIntegration: true,
             preload: path.resolve(app.getAppPath(), "preload.js")

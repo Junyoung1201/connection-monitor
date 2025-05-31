@@ -1,4 +1,4 @@
-import ConnectionList from 'components/section/ConnectionList';
+import ConnectionList from 'components/connection/ConnectionList';
 import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import { useSelector } from 'react-redux';
@@ -7,8 +7,7 @@ import { setConnectionList } from 'store/connection';
 import { RootState, store } from 'store/store';
 import './fonts/fonts.css';
 import 'app.css';
-import Header from 'components/header/Header';
-import Section from 'components/section/Section';
+import Search from 'components/search/Search';
 
 ReactDOM.createRoot(document.querySelector("#app")!).render(<App />)
 
@@ -33,8 +32,8 @@ function App() {
 
     return (
         <Provider store={store}>
-            <Header />
-            <Section />
+            <Search />
+            <ConnectionList /> 
         </Provider>
     )
 }
