@@ -5,16 +5,16 @@ import { ConnectionStateType, I_ConnectionInfo } from "types/connection";
 import { I_ProcessInfo } from "types/process";
 
 const stateColors: { [state: string]: string } = {
-    "ESTABLISHED": '#4CAF50',
-    "CLOSE_WAIT": '#FFB74D',
-    "TIME_WAIT": '#FFF176',
-    "SYN_SENT": '#81D4FA',
+    "ESTABLISHED": '#00d80bff',
+    "CLOSE_WAIT": '#ff9900ff',
+    "TIME_WAIT": '#ffe600ff',
+    "SYN_SENT": '#00aeffff',
     "LISTEN": '#AED581',
     "FIN_WAIT1": '#A1887F',
     "FIN_WAIT2": '#A1887F',
-    "CLOSING": '#F57C00',
+    "CLOSING": '#fa9c3eff',
     "LAST_ACK": '#BA68C8',
-    "CLOSED": '#BDBDBD',
+    "CLOSED": '#ff0000ff',
 };
 
 function ConnectionItem(con: I_ConnectionInfo) {
@@ -28,7 +28,7 @@ function ConnectionItem(con: I_ConnectionInfo) {
 
     useEffect(() => {
         window.app.invoke("getProcessInfoByPID", pid).then(setProcess)
-    },[])
+    },[pid])
 
     const isSearched = () => (
         ![...Object.values(con),process?.name].some((v: string) => 

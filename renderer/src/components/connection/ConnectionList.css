@@ -1,19 +1,37 @@
 .con-list {
     position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
 
     /*  제목 행  */
-    .con-item:first-child {
-
+    >.con-item:first-child {
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
         border-bottom: 1px solid black;
 
-        * {
+        >div {
             font-weight: bold;
+            cursor: pointer;
+            user-select: none;
         }
+
+        >div:hover {
+            background-color: blue;
+        }
+
+        >div:active {
+            background-color:blue;
+        }
+    }
+
+    .con-list-content {
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1;
     }
 
     .con-item {

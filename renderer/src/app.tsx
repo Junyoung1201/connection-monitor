@@ -17,7 +17,8 @@ function App() {
 
     useEffect(() => {
         if(!timerRef.current) {
-            timerRef.current = setInterval(updateConnectionList,350);
+            // 렉 방지를 위해 500ms로 조정 (캐싱으로 성능 최적화됨)
+            timerRef.current = setInterval(updateConnectionList, 500);
         }
 
         return () => {
