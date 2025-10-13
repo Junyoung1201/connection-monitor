@@ -22,7 +22,7 @@ export function createWindow() {
     win.setMenuBarVisibility(false);
 
     if(app.isPackaged) {
-        win.loadFile("index.html");
+        win.loadFile(path.join(__dirname, "../../renderer/index.html"));
 
         win.webContents.on("before-input-event", (event, input) => {
             if (input.key === "F12" || (input.control && input.shift && input.key.toLowerCase() === "i")) {

@@ -1,46 +1,24 @@
 {
     "name": "connection-monitor-app",
     "version": "1.0.0",
-    "main": "main.js",
-    "scripts": {
-        "start": "cls && npx tsc && electron ./public/main.js",
-        "dev": "nodemon -e ts --watch ./src --exec npm start",
-        "build": "electron-builder"
-    },
+    "main": "./public/main.js",
     "author": "이준영",
     "license": "ISC",
     "description": "",
+    "scripts": {
+        "start": "cls && npx tsc && electron ./public/main.js",
+        "dev": "nodemon -e ts --watch ./src --exec npm start",
+        "build:main": "npx tsc",
+        "build:renderer": "cd ../renderer && npm run build",
+        "prebuild": "npm run build:main && npm run build:renderer",
+        "build": "electron-builder --config electron-builder.config.js",
+        "dist": "npm run prebuild && npm run build"
+    },
     "devDependencies": {
         "@types/electron": "^1.4.38",
         "@types/node": "^22.15.20",
         "electron": "^36.2.1",
         "electron-builder": "^26.0.12",
         "nodemon": "^3.1.10"
-    },
-    "build": {
-        "appId": "me.junyoung.connection.monitor.app",
-        "productName": "Connection Monitor",
-        "icon": "assets/icon.png",
-        "directories": {
-            "buildResources": "assets",
-            "output": "dist"
-        },
-        "files": [
-            {
-                "from": "assets",
-                "to": "."
-            },
-            "package.json",
-            "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
-            "!**/node_modules/.bin",
-            "!**/*.map"
-        ],
-        "nsis": {
-            "oneClick": true
-        },
-        "win": {
-            "target": "nsis",
-            "icon": "assets/icon.png"
-        }
     }
 }
