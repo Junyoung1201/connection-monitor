@@ -11,11 +11,21 @@ interface CachedConnection {
 }
 
 export default class ConnectionMonitor {
+
+    // 연결 정보 캐시
     private static cache = new Map<string, CachedConnection>();
+
+    // PID로 캐시한 정보
     private static processCache = new Map<string, I_ProcessInfo>();
+
+    // 마지막 업데이트 시간
     private static lastUpdate = 0;
-    private static readonly CACHE_TTL = 3000; // 3초
-    private static readonly UPDATE_THRESHOLD = 200; // 최소 200ms 간격
+
+    // 캐시 유효 시간 (ms)
+    private static readonly CACHE_TTL = 3000;
+
+    // 최소 업데이트 간격 (ms)
+    private static readonly UPDATE_THRESHOLD = 200;
 
     static log(message: string, level: 'log' | 'error' | 'warn' = 'log') {
         console[level]("[ConnectionMonitor]", message);
@@ -68,7 +78,7 @@ export default class ConnectionMonitor {
 
     private static async getNetstatConnections(): Promise<I_ConnectionInfo[]> {
         return new Promise((resolve, reject) => {
-            
+
             const proc = exec("netstat -ano");
             const connections: I_ConnectionInfo[] = [];
 
